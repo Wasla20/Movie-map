@@ -9,11 +9,29 @@ import UIKit
 
 class ViewController: UIViewController {
 
+   var movieArray = [Movie]()
+    @IBOutlet weak var collectionView: UICollectionView!
+    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        collectionView.dataSource = self
     }
 
 
+}
+
+extension UIViewController : UICollectionViewDataSource
+{
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        movieArray.count
+    }
+    
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        <#code#>
+    }
+    
+    
 }
 
