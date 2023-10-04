@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Foundation
 
 class ViewController: UIViewController , UISearchBarDelegate{
 
@@ -19,12 +20,13 @@ class ViewController: UIViewController , UISearchBarDelegate{
    // @IBOutlet weak var collectionView: UICollectionView!
     var movieManager = MovieManager()
     
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
         searchField.delegate = self
-
+        movieManager.delegate = self
         collectionView.dataSource = self
     }
 
@@ -38,25 +40,48 @@ extension ViewController : UICollectionViewDataSource
         moviesArray.count
     }
     
+    
+    
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MovieCollectionViewCell", for: indexPath) as! MovieCollectionViewCell
-        cell.textLabel?.text = moviesArray[indexPath.item].title
-        return cell
-        
-        
+      
+      
+        let fimage = "https://image.tmdb.org/t/p/w500/\(moviesArray[indexPath.row].poster_path)" 
+            
+            ImageLoader.sharedInstance.imageForUrl(urlString: fimage) { [weak self] (image, url) in
+                if let image = image {
+                    // Ensure the cell is still visible before updating its contents
+                    if let indexPath = collectionView.indexPath(for: cell), indexPath.row == indexPath.row {
+                        cell.imageView?.image = image
+                    }
+                }
+            }
+            
+            cell.textLabel?.text = moviesArray[indexPath.item].title
+            return cell
+                                               }
+    
     }
     
     
-}
+
 
 extension ViewController : MovieManagerDelegate{
+   
+   
     func didUpdateMovie(_ movieManager: MovieManager, movie: [Movie]) {
+        print("inside didUpdateMovie")
+  
+        moviesArray = movie
         
-       /* DispatchQueue.main.async {
+        DispatchQueue.main.async {
+           
             self.collectionView.reloadData()
-        }*/
+        }
         
-        print("inside didUpdateMovie \(movie)")
+     
+        
+
     }
     
     func didFailWithError(error: Error) {

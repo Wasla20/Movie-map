@@ -6,10 +6,12 @@
 //
 
 import Foundation
+import UIKit
 
 protocol MovieManagerDelegate {
     func didUpdateMovie(_ movieManager: MovieManager, movie: [Movie])
     func didFailWithError(error: Error)
+
 }
 
 struct MovieManager{
@@ -40,6 +42,8 @@ struct MovieManager{
                 }
                 if let safeData = data {
                     if let movie = self.parseJSON(safeData) {
+                        //print("movies array in json parser : \(movie)")
+
                         self.delegate?.didUpdateMovie(self, movie: movie)
                     }
                 }
@@ -80,7 +84,6 @@ struct MovieManager{
                 moviesArray.append(newMovie)
             }
             
-            print("movies array in json parser : \(moviesArray)")
             return moviesArray
 
         } catch {
