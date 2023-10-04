@@ -9,4 +9,6 @@ import UIKit
 
 class MovieCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var textLabel: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
 }
