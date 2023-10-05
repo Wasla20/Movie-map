@@ -82,7 +82,7 @@
                                                 <connections>
                                                     <outlet property="imageView" destination="QC9-9q-Cnn" id="Hmx-lm-aYR"/>
                                                     <outlet property="textLabel" destination="vna-h2-Btj" id="ViL-Wr-nOg"/>
-                                                    <segue destination="GcY-Km-4so" kind="presentation" identifier="GoToDetails" id="z7F-1l-tqy"/>
+                                                    <segue destination="ruS-Va-jZk" kind="presentation" identifier="DetailView" id="5Ck-Aq-oWG"/>
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>
@@ -119,20 +119,20 @@
             </objects>
             <point key="canvasLocation" x="904.58015267175574" y="-21.126760563380284"/>
         </scene>
-        <!--Movie Details-->
-        <scene sceneID="NAb-jS-uK2">
+        <!--Detail View Controller-->
+        <scene sceneID="4Nd-vY-VpI">
             <objects>
-                <viewController storyboardIdentifier="DetailsViewController" title="Movie Details" id="GcY-Km-4so" customClass="DetailsViewController" customModule="MovieMap" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="cve-c5-bbY">
+                <viewController storyboardIdentifier="DetailViewController" id="ruS-Va-jZk" customClass="DetailViewController" customModule="MovieMap" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RoH-5n-Y5I">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="wj6-i8-chZ"/>
+                        <viewLayoutGuide key="safeArea" id="MyR-t4-8cn"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kM1-eJ-q48" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TP5-Ti-JdZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1982" y="-21"/>
+            <point key="canvasLocation" x="1936" y="-11"/>
         </scene>
         <!--Movie Map-->
         <scene sceneID="J9w-hL-8dC">

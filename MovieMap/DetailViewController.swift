@@ -1,5 +1,5 @@
 //
-//  DetailsViewController.swift
+//  DetailViewController.swift
 //  MovieMap
 //
 //  Created by Wasla Shafique on 05/10/2023.
@@ -7,16 +7,23 @@
 
 import UIKit
 
-class DetailsViewController: UIViewController {
 
-    
+protocol DetailViewDelegate {
+    func updateDetailControllerUI(movie : Movie)
+
+
+}
+class DetailViewController: UIViewController {
+
     let selectedMovie : Movie? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
+        var vc = ViewController()
+        vc.delegate = self
         if let movie = selectedMovie{
-            print("inside detail view controller  : \(movie)")
+            
+            print("inside detail view  \(movie.title)")
         }
         // Do any additional setup after loading the view.
     }
@@ -32,4 +39,14 @@ class DetailsViewController: UIViewController {
     }
     */
 
+}
+
+extension DetailViewController : DetailViewDelegate{
+    func updateDetailControllerUI(movie: Movie) {
+        
+    }
+    
+    
+    
+    
 }

@@ -13,11 +13,9 @@ class ViewController: UIViewController , UISearchBarDelegate{
     var moviesArray = [Movie]()
     
     
-    //@IBAction func searchButtonPressed(_ sender: UIButton) {}
     @IBOutlet weak var searchField: UITextField!
     
     @IBOutlet weak var collectionView: UICollectionView!
-   // @IBOutlet weak var collectionView: UICollectionView!
     var movieManager = MovieManager()
     
     
@@ -31,7 +29,7 @@ class ViewController: UIViewController , UISearchBarDelegate{
         collectionView.dataSource = self
         collectionView.delegate = self
         
-        definesPresentationContext = true
+        //definesPresentationContext = true
 
     }
 
@@ -64,7 +62,7 @@ extension ViewController : UICollectionViewDataSource
         
         let baseURL = "https://image.tmdb.org/t/p/w500/"
         let imgURL = baseURL + (moviesArray[indexPath.item].poster_path ?? "")!
-        print("downloading !!  \(imgURL)")
+        //print("downloading !!  \(imgURL)")
         if  let url = URL(string: imgURL){
             downloadImage(from: url , cell: cell)
         }
@@ -81,9 +79,9 @@ extension ViewController : UICollectionViewDelegate{
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        //let detailViewController = DetailsViewController()
+       // let detailViewController = DetailViewController()
         
-        let detailViewController = self.storyboard?.instantiateViewController(withIdentifier: "GoToDetails") as? DetailsViewController
+        let detailViewController = self.storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController
         self.navigationController?.pushViewController(detailViewController!, animated: true)
         
        /* DispatchQueue.main.async {
@@ -138,11 +136,11 @@ extension ViewController : MovieManagerDelegate{
     
     
     func downloadImage(from url: URL, cell : MovieCollectionViewCell ) {
-        print("Download Started")
+        //print("Download Started")
         getData(from: url) { data, response, error in
             guard let data = data, error == nil else { return }
-            print(response?.suggestedFilename ?? url.lastPathComponent)
-            print("Download Finished")
+            //print(response?.suggestedFilename ?? url.lastPathComponent)
+           // print("Download Finished")
             // always update the UI from the main thread
             DispatchQueue.main.async() { [weak self] in
                 cell.imageView.image = UIImage(data: data)
