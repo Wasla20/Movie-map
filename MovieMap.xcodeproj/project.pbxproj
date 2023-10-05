@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		30CB3E1F2ACDAD2B00E1A449 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CB3E1E2ACDAD2B00E1A449 /* ImageLoader.swift */; };
+		30CB80372ACE902C00328788 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CB80362ACE902C00328788 /* DetailsViewController.swift */; };
 		30DB741B2ACD33D4003AEF8D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DB741A2ACD33D4003AEF8D /* AppDelegate.swift */; };
 		30DB741D2ACD33D4003AEF8D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DB741C2ACD33D4003AEF8D /* SceneDelegate.swift */; };
 		30DB741F2ACD33D4003AEF8D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DB741E2ACD33D4003AEF8D /* ViewController.swift */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		30CB3E1E2ACDAD2B00E1A449 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		30CB80362ACE902C00328788 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		30DB74172ACD33D4003AEF8D /* MovieMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30DB741A2ACD33D4003AEF8D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		30DB741C2ACD33D4003AEF8D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 				30DB74252ACD33D6003AEF8D /* LaunchScreen.storyboard */,
 				30DB74282ACD33D6003AEF8D /* Info.plist */,
 				30DB742E2ACD3E06003AEF8D /* MovieCollectionViewCell.swift */,
+				30CB80362ACE902C00328788 /* DetailsViewController.swift */,
 			);
 			path = MovieMap;
 			sourceTree = "<group>";
@@ -161,6 +164,7 @@
 				30CB3E1F2ACDAD2B00E1A449 /* ImageLoader.swift in Sources */,
 				30DB741F2ACD33D4003AEF8D /* ViewController.swift in Sources */,
 				30DB741B2ACD33D4003AEF8D /* AppDelegate.swift in Sources */,
+				30CB80372ACE902C00328788 /* DetailsViewController.swift in Sources */,
 				30DB741D2ACD33D4003AEF8D /* SceneDelegate.swift in Sources */,
 				30DB742F2ACD3E06003AEF8D /* MovieCollectionViewCell.swift in Sources */,
 				30DB74352ACD4B54003AEF8D /* MovieManager.swift in Sources */,

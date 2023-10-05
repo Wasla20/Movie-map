@@ -11,6 +11,8 @@ import UIKit
 protocol MovieManagerDelegate {
     func didUpdateMovie(_ movieManager: MovieManager, movie: [Movie])
     func didFailWithError(error: Error)
+    func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ())
+
 
 }
 
