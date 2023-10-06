@@ -25,11 +25,10 @@ struct MovieManager{
     
     func fetchMovie(title: String) {
         let urlString = "https://api.themoviedb.org/3/search/movie?query=\(title)&api_key=83d01f18538cb7a275147492f84c3698"
-        print("title entered by user :  \(title)" )
+        //print("title entered by user :  \(title)" )
         performRequest(with: urlString)
     }
     func performRequest(with urlString: String) {
-        print("inside perform request")
         if let url = URL(string: urlString) {
             
             
@@ -56,17 +55,17 @@ struct MovieManager{
     
     func parseJSON(_ movieData: Data) -> [Movie]? {
         let decoder = JSONDecoder()
-        print("inside json parser ")
+        // print("inside json parser ")
         var moviesArray = [Movie]()
         
         do {
             let movies = try decoder.decode(MovieApiResponse.self, from: movieData)
             
             //print("decoded data : \(decodedData)" )
-           
+            
             //print("movies : \(decodedData.results)")
-            for i in 0..<(movies.results.count-1
-                              ){
+            for i in 0..<(movies.results.count)
+            {
                 let title = movies.results[i].title
                 let poster_path = movies.results[i].poster_path
                 let release_date = movies.results[i].release_date
@@ -87,7 +86,7 @@ struct MovieManager{
             }
             
             return moviesArray
-
+            
         } catch {
             delegate?.didFailWithError(error: error)
             print("error : \(error)")

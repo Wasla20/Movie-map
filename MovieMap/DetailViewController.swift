@@ -8,22 +8,39 @@
 import UIKit
 
 
-protocol DetailViewDelegate {
-    func updateDetailControllerUI(movie : Movie)
 
-
-}
 class DetailViewController: UIViewController {
 
-    let selectedMovie : Movie? = nil
+    
+    
+    
+    
+    @IBOutlet weak var backdropImage: UIImageView!
+    @IBOutlet weak var movieTitle: UILabel!
+    @IBOutlet weak var voteAverage: UILabel!
+    @IBOutlet weak var voteCount: UILabel!
+    @IBOutlet weak var overview: UILabel!
+    
+    
+    
+    var selectedMovie : Movie? = nil
+    var backdropURLImage : UIImage? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var vc = ViewController()
-        vc.delegate = self
         if let movie = selectedMovie{
             
             print("inside detail view  \(movie.title)")
+            
+            
+            DispatchQueue.main.async {
+                self.backdropImage.image = self.backdropURLImage
+                self.movieTitle.text = "Title : \(movie.title)"
+                self.voteAverage.text = "Vote Average : \(movie.vote_average)"
+                self.voteCount.text = "Vote Count : \(movie.vote_count)"
+                self.overview.text = "Overview \n \(movie.overview)"
+            }
+            
         }
         // Do any additional setup after loading the view.
     }
@@ -41,12 +58,9 @@ class DetailViewController: UIViewController {
 
 }
 
-extension DetailViewController : DetailViewDelegate{
-    func updateDetailControllerUI(movie: Movie) {
-        
-    }
+
     
     
     
     
-}
+
